@@ -45,14 +45,25 @@ class App extends Component {
     window.location.reload();
   };
 
+  getTotal = () => {
+    let total = 0
+    this.state.counters.forEach(function(item, index) {
+      total += item.value
+    });
+    return total
+  }
+
   render() {
     return (
       <div className="main__wrap">
         <main className="container">
           <div className="card__box">
             <NavBar
-              totalCounters={
+              totalUniqueItems={
                 this.state.counters.filter((c) => c.value > 0).length
+              }
+              totalItems={
+                this.getTotal()
               }
             />
             <Counters

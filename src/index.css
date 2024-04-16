@@ -39,5 +39,5 @@ code {
   cursor: pointer !important;
 }
 .badge {
-  width: 70px !important;
+  width: auto !important;
 }
